@@ -6,7 +6,7 @@
 BearSSL::CertStore certStore;
 #include <time.h>
  
-const String FirmwareVer={"2.0"}; 
+const String FirmwareVer={"2.1"}; 
 #define URL_fw_Version "/pornpasok/iot-firmware/master/version.txt"
 #define URL_fw_Bin "https://raw.githubusercontent.com/pornpasok/iot-firmware/master/firmware.bin"
 const char* host = "raw.githubusercontent.com";
@@ -44,8 +44,8 @@ X509List cert(trustRoot);
 extern const unsigned char caCert[] PROGMEM;
 extern const unsigned int caCertLen;
 
-const char* ssid = "YOUR-SSID";
-const char* password = "YOUR-PASSWORD";
+const char* ssid = "SookYenFarm";
+const char* password = "0863741677";
 
 void setClock() {
    // Set time via NTP, as required for x.509 validation
@@ -57,13 +57,13 @@ void setClock() {
     Serial.print(".");
     now = time(nullptr);
   }
-  /*
+ 
   Serial.println("");
   struct tm timeinfo;
   gmtime_r(&now, &timeinfo);
   Serial.print("Current time: ");
   Serial.print(asctime(&timeinfo));
-  */
+  
 }
   
 void FirmwareUpdate()
